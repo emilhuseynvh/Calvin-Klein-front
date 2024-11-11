@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{overflow-x: hidden !important;}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('assets/font/Klein-Book.ttf') format('truetype');
+    font-style: normal;
+}
+
+.text {
+  position: relative;
+}
+
+.text::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translateX(5%);
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--underline-color, #4E2526);
+  transition: width 0.4s ease;
+}
+
+.text:hover::after {
+  width: 90%;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #696969;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: black;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  color: white;
+  width: 5px;
+  height: 9px;
+  position: absolute;
+  top: 1.5px;
+  left: 4.6px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(43deg);
+}
+
+p h1, h2, h3, h4, h5, h6, div, span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
